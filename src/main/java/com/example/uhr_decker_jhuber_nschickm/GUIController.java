@@ -1,4 +1,6 @@
-package Controller ;
+package com.example.uhr_decker_jhuber_nschickm;
+import Model.*;
+import View.*;
 
 
 /**

@@ -1,43 +1,24 @@
-package Model ;
+package Model;
+
 import java.sql.Time;
+import java.time.LocalDateTime;
 
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
+ * @author david
  */
+public class Stoppuhr {
+    private static Time end;
 
-public class Stoppuhr
-{
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public Time start;
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 */
-	public Stoppuhr(){
-		super();
-	}
+    public static void main(String[] args) {
+        System.out.println();
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public int click() {
-		// TODO implement me
-		return 0;	
-	}
-	
+    public int click() {
+
+        if (end == null) {
+        }
+        return 0;
+    }
+
 }
 
