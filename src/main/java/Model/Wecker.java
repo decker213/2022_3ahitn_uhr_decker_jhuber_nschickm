@@ -1,55 +1,52 @@
-package Model ;
+package Model;
+
+import java.io.*;
 import java.sql.Time;
 
 
-/**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
- */
+public class Wecker {
 
-public class Wecker
-{
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public Time time;
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 */
-	public Wecker(){
-		super();
-	}
+    private String time;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public void addWecker() {
-		// TODO implement me	
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public boolean iscurrentWecker() {
-		// TODO implement me
-		return false;	
-	}
-	
+    public static void main(String[] args) throws IOException {
+        Wecker w = new Wecker();
+
+        w.addWecker("09:13");
+        w.iscurrentWecker();
+    }
+
+    public Wecker() {
+        super();
+    }
+
+
+    public void addWecker(String time) throws IOException {
+
+        File wecker = new File("WeckerTime");
+        FileWriter fwWecker = new FileWriter(wecker);
+        fwWecker.write(String.valueOf(time));
+
+        fwWecker.close();
+
+        BufferedReader br = new BufferedReader(new FileReader(wecker));
+        String st;
+        while ((st = br.readLine()) != null)
+            this.time = st;
+
+    }
+
+
+    public boolean iscurrentWecker() {
+        boolean rv = false;
+        Time timenow = new Time(System.currentTimeMillis());
+
+        String[] parts = timenow.toString().split(":");
+
+        if ((parts[0] + ":" + parts[1]).equals(String.valueOf(time))) {
+            rv = true;
+        }
+        return rv;
+    }
+
 }
 
