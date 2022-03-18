@@ -7,17 +7,24 @@ import java.time.LocalDateTime;
  * @author david
  */
 public class Stoppuhr {
-    private static Time end;
+    private Time start;
 
-    public static void main(String[] args) {
-        System.out.println();
-    }
+    /**
+     * Misst den Zeitabstand zwischen zwei Aufrufen der Methode
+     * @return wenn "click" das erste mal aufgerufen wird, wird NULL zurueckgegeben,
+     * beim zweiten Mal die Differenz zwischen dem ersten und dem zweiten "click"
+     */
+    public Time click() {
+        Time r = null;
 
-    public int click() {
-
-        if (end == null) {
+        if (start == null) {
+            start = new Time(System.currentTimeMillis());
+        } else {
+            r = new Time(System.currentTimeMillis() - start.getTime());
+            start = null;
         }
-        return 0;
+
+        return r;
     }
 
 }
