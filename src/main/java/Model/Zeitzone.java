@@ -1,49 +1,34 @@
 package Model;
 
+import java.util.TimeZone;
 
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- *
- * @generated
+ * @author david
  */
-
 public class Zeitzone {
 
-    public String currentTimezone;
+    private TimeZone timeZone;
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!--  end-user-doc  -->
-     *
-     * @generated
-     * @ordered
-     */
-
-    public String startTimezone;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!--  end-user-doc  -->
-     *
-     * @generated
-     */
-    public Zeitzone() {
-        super();
+    public Zeitzone(TimeZone timeZone) {
+        this.timeZone = timeZone;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!--  end-user-doc  -->
+     * Berechnet die Zeitverschiebung zwischen der in der Klasse gespeicherten Zeitzone und der mitgegebenen Zeitzone
      *
-     * @generated
-     * @ordered
+     * @param zeitzone Zeitzone, zu der die Verschiebung berechnet werden soll
+     * @return gibt die Verschiebung zu der Start-Zeitzone in Millisekunden zurück
      */
-
-    public int calc(String parameter) {
-        // TODO implement me
-        return 0;
+    public long calc(TimeZone zeitzone) {
+        return timeZone.getRawOffset() - zeitzone.getRawOffset();
     }
 
+    public void setTimeZone(TimeZone timeZone) {
+        this.timeZone = timeZone;
+    }
+
+    public TimeZone getTimeZone() {
+        return timeZone;
+    }
 }
 
