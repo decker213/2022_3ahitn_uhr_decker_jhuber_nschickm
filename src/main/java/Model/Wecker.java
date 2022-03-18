@@ -3,11 +3,20 @@ package Model;
 import java.io.*;
 import java.sql.Time;
 
-
+/**
+ * @author: Nico
+ */
 public class Wecker {
+
 
     private String time;
 
+    /**
+     * Die eingegebe Weckzeit wird in das WeckerTime.txt gespeichert
+     *
+     * @param time ist die eingegebene Weckzeit
+     * @throws IOException
+     */
     public void addWecker(String time) throws IOException {
 
         File wecker = new File("WeckerTime");
@@ -22,6 +31,10 @@ public class Wecker {
             this.time = st;
     }
 
+    /**
+     * @return true wenn die Uhrzeit gleich der Weckzeit ist
+     * false wenn die Uhr ungleich der Weckzeit ist
+     */
     public boolean iscurrentWecker() {
         boolean rv = false;
         Time timenow = new Time(System.currentTimeMillis());

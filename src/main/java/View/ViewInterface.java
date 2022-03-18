@@ -1,33 +1,16 @@
-package View ;
+package View;
 
 
-/**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
- */
+public class ViewInterface {
 
-public class ViewInterface
-{
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 */
-	public ViewInterface(){
-		super();
-	}
+    public ViewInterface() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public void display() {
-		// TODO implement me	
-	}
-	
+
+    public void display() {
+        // TODO implement me
+    }
+
 }
 
