@@ -8,18 +8,6 @@ public class Wecker {
 
     private String time;
 
-    public static void main(String[] args) throws IOException {
-        Wecker w = new Wecker();
-
-        w.addWecker("09:13");
-        w.iscurrentWecker();
-    }
-
-    public Wecker() {
-        super();
-    }
-
-
     public void addWecker(String time) throws IOException {
 
         File wecker = new File("WeckerTime");
@@ -32,9 +20,7 @@ public class Wecker {
         String st;
         while ((st = br.readLine()) != null)
             this.time = st;
-
     }
-
 
     public boolean iscurrentWecker() {
         boolean rv = false;
@@ -49,4 +35,3 @@ public class Wecker {
     }
 
 }
-
