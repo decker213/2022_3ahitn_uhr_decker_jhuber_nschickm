@@ -1,22 +1,19 @@
 package View ;
 
 
-/**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
- */
+import java.sql.Time;
 
+/**
+ * @author david
+ */
 public class DigitalViewConsole extends ViewInterface
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
+	 * Gibt die Zeit aus
+ 	 * @param time Zeit in EU - Format
 	 */
-	public DigitalViewConsole(){
-		super();
+	public void display(Time time) {
+		System.out.println(time);
 	}
-
 }
 

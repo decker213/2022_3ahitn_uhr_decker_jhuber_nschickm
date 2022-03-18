@@ -1,22 +1,17 @@
-package View ;
+package View;
 
 
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
+ * @author david
  */
+public class WeatherVIewConsole extends ViewInterface {
 
-public class WeatherVIewConsole extends ViewInterface
-{
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 */
-	public WeatherVIewConsole(){
-		super();
-	}
-
+    /**
+     * Gibt Details zu den Wetter Daten aus
+     * @param s Wetterdaten, welche ausgegeben werden
+     */
+    public void display(String s) {
+        System.out.println("Wetter: " + s);
+    }
 }
 

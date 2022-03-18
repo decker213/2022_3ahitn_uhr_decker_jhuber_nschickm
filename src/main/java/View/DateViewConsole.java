@@ -1,22 +1,19 @@
 package View ;
 
 
-/**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
- */
+import java.util.Date;
 
+/**
+ * @author david
+ */
 public class DateViewConsole extends ViewInterface
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
+	 * Gibt ein Datum aus
+	 * @param date Datum, welches ausgegeben wird
 	 */
-	public DateViewConsole(){
-		super();
+	public void display(Date date) {
+		System.out.println(date);
 	}
-
 }
 

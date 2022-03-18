@@ -1,22 +1,17 @@
-package View ;
+package View;
 
 
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
+ * @author david
  */
+public class TemperatureViewConsole extends ViewInterface {
 
-public class TemperatureViewConsole extends ViewInterface
-{
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 */
-	public TemperatureViewConsole(){
-		super();
-	}
-
+    /**
+     * Gibt die Temperatur in °C aus
+     * @param temp Temperatur in °C
+     */
+    public void display(int temp) {
+        System.out.println(temp + " C°");
+    }
 }
 
