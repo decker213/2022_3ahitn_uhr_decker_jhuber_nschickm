@@ -11,9 +11,8 @@ public class Uhr {
     private Time zeit_us;
     private Date datum;
 
-    public Uhr(Time zeit_eu, Time zeit_us, Date datum) {
+    public Uhr(Time zeit_eu, Date datum) {
         this.zeit_eu = zeit_eu;
-        this.zeit_us = zeit_us;
         this.datum = datum;
     }
 
@@ -22,6 +21,11 @@ public class Uhr {
     }
 
     public Time getZeit_us() {
+        if (zeit_eu.getHours() % 12 != 0) {
+            zeit_us = new Time(zeit_eu.getTime() - 43200000);
+        } else {
+            zeit_us = new Time(zeit_eu.getTime());
+        }
         return zeit_us;
     }
 

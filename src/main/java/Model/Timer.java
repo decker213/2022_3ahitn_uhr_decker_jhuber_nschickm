@@ -1,44 +1,27 @@
 package Model;
-import java.sql.Time;
 
+import java.sql.Time;
+import java.util.concurrent.TimeUnit;
 
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- *
- * @generated
+ * @author david
  */
-
 public class Timer {
-    /**
-     * <!-- begin-user-doc -->
-     * <!--  end-user-doc  -->
-     *
-     * @generated
-     * @ordered
-     */
-
-    public Time start;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!--  end-user-doc  -->
-     *
-     * @generated
-     * @ordered
+     * Wartet die angegebene Zeit bis zu 0 und gibt dann true zurück
+     * @param t in dem Paramater wird die Zeit in Millisekunden angegeben, wie lang der Timer dauern soll
+     * @return sobald die angegebene Zeit abgelaufen ist, wird true zurückgegeben
+     * @throws InterruptedException
      */
+    public boolean timerstart(Time t) throws InterruptedException {
+        boolean r = false;
 
-    public Time end;
+        for (int i = 0; i <= t.getTime() / 1000; i++) {
+            TimeUnit.SECONDS.sleep(1);
+        }
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!--  end-user-doc  -->
-     *
-     * @generated
-     */
-    public Timer() {
-        super();
+        return r;
     }
-
 }
 
