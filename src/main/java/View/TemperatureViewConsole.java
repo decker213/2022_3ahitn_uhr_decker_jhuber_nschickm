@@ -4,7 +4,7 @@ package View;
 /**
  * @author david
  */
-public class TemperatureViewConsole extends ViewInterface {
+public class TemperatureViewConsole   {
 
     /**
      * Gibt die Temperatur in °C aus

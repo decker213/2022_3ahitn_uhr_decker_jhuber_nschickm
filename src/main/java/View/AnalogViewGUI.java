@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.Time;
 
-public class AnalogViewGUI extends ViewInterface {
+public class AnalogViewGUI {
 
     AnchorPane anchorPane = new AnchorPane();
 
@@ -19,7 +19,6 @@ public class AnalogViewGUI extends ViewInterface {
         this.anchorPane = anchorPane;
     }
 
-    @Override
     public void display(Time time) {
         double alpha = 270 - time.getMinutes() * 6;
         double start_x = 200;

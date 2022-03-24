@@ -6,7 +6,7 @@ import java.sql.Time;
 /**
  * @author david
  */
-public class DigitalViewConsole extends ViewInterface
+public class DigitalViewConsole
 {
 	/**
 	 * Gibt die Zeit aus
