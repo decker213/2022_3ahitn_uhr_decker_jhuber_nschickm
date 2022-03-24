@@ -7,6 +7,9 @@ import Model.Zeitzone;
 import View.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+
+import java.sql.Time;
 
 public class HelloController {
 
@@ -25,7 +28,14 @@ public class HelloController {
     private Label welcomeText;
 
     @FXML
+    private AnchorPane AnchorPane;
+
+    @FXML
     protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+        avg.display(new Time(System.currentTimeMillis()));
+    }
+
+    public void initialize() {
+        avg = new AnalogViewGUI(AnchorPane);
     }
 }

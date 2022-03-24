@@ -1,7 +1,7 @@
 package View;
 
 
-public class WeatherViewGUI extends ViewInterface {
+public class WeatherViewGUI {
 
     public WeatherViewGUI() {
         super();

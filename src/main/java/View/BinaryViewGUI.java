@@ -1,7 +1,7 @@
 package View;
 
 
-public class BinaryViewGUI extends ViewInterface {
+public class BinaryViewGUI {
 
     public BinaryViewGUI() {
         super();

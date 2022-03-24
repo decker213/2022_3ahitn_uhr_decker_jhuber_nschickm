@@ -1,7 +1,7 @@
 package View;
 
 
-public class DateViewGUI extends ViewInterface {
+public class DateViewGUI {
     public DateViewGUI() {
         super();
     }

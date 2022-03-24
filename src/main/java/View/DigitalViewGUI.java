@@ -1,7 +1,7 @@
 package View;
 
 
-public class DigitalViewGUI extends ViewInterface {
+public class DigitalViewGUI {
 
     public DigitalViewGUI() {
         super();
