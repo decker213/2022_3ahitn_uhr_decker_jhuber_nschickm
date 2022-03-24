@@ -9,7 +9,6 @@ import java.time.LocalDateTime;
 public class Stoppuhr {
     private Time start;
 
-
     /**
      * Misst den Zeitabstand zwischen zwei Aufrufen der Methode
      * @return wenn "click" das erste mal aufgerufen wird, wird NULL zurueckgegeben,

@@ -2,6 +2,10 @@ package Model;
 
 import javafx.scene.paint.Color;
 
+/**
+ * @author david
+ * speichert die Daten zu dem aktuellen Format
+ */
 public class Format {
     private Color color;
     private Boolean sekunden;
