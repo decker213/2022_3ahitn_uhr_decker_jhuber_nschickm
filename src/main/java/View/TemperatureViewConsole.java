@@ -11,6 +11,7 @@ public class TemperatureViewConsole extends ViewInterface {
      * @param temp Temperatur in °C
      */
     public void display(int temp) {
+
         System.out.println(temp + " C°");
     }
 }
