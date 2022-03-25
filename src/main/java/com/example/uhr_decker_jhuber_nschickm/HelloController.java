@@ -6,9 +6,11 @@ import Model.Wecker;
 import Model.Zeitzone;
 import View.*;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.sql.Time;
 
 public class HelloController {
@@ -31,11 +33,14 @@ public class HelloController {
     private AnchorPane AnchorPane;
 
     @FXML
-    protected void onHelloButtonClick() {
+    private Button showAnalogUhr;
+
+    @FXML
+    protected void showAnalogUhr() throws IOException {
         avg.display(new Time(System.currentTimeMillis()));
     }
 
-    public void initialize() {
+    public void initialize()  {
         avg = new AnalogViewGUI(AnchorPane);
     }
 }
