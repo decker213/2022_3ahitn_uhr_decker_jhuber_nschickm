@@ -1,10 +1,18 @@
 package View;
 
 
+import javafx.scene.control.Label;
+
 public class DateViewGUI extends ViewInterface {
-    public DateViewGUI() {
-        super();
+
+    protected Label l;
+
+    public DateViewGUI(Label l) {
+        this.l = l;
     }
 
+    public void display(String date){
+        l.setText(date);
+    }
 }
 
