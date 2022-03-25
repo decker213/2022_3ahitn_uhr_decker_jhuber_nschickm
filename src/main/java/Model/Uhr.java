@@ -5,6 +5,9 @@ import java.util.Date;
 
 /**
  * @author david
+ * in der Uhr Klasse wird die aktuelle Zeit im eu- und us- Format und das aktuelle Datum gespeichert
+ * mit den getter kann auf die einzelnen Zeiten/ das Datum zugegriffen werden
+ * die Zeit wird im Konstruktor im eu-Format gesetzt
  */
 public class Uhr {
     private Time zeit_eu;
