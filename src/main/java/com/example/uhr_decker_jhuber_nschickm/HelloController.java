@@ -43,4 +43,11 @@ public class HelloController {
     public void initialize() {
         avg = new AnalogViewGUI(mainpane);
     }
+
+    public void binaryClock(){
+
+    }
+
+
 }
+

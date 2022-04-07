@@ -1,10 +1,31 @@
 package View;
 
 
-public class DigitalViewGUI {
+import javafx.scene.control.Label;
 
-    public DigitalViewGUI() {
-        super();
+import java.sql.Time;
+
+/**
+ * @author jhuber
+ * Ändert den Text des Labels, welches die Uhrzeit im Digital-Format ausgibt.
+ */
+public class DigitalViewGUI extends ViewInterface {
+    protected Label l;
+
+    /**
+     * Konstruktor
+     * @param l das Label was zu ändern ist
+     */
+    public DigitalViewGUI(Label l) {
+        this.l = l;
+    }
+
+    /**
+     * Ändert das Label
+     * @param t die Zeiot auf die das Label gesetzt wird
+     */
+    public void display(Time t){
+        l.setText(String.valueOf(t));
     }
 
 }
