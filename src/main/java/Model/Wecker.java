@@ -47,26 +47,6 @@ public class Wecker {
         return rv;
     }
 
-
-    public static void main(String[] args) {
-        Time time = new Time(System.currentTimeMillis());
-        System.out.println(time);
-        String[] parts = time.toString().split(":");
-        int hour = Integer.parseInt(parts[0]);
-        int min = Integer.parseInt(parts[1]);
-        int sec = Integer.parseInt(parts[2]);
-
-        int binsec = Integer.parseInt(Integer.toBinaryString(sec));
-        int binmin = Integer.parseInt(Integer.toBinaryString(min));
-        int binhour = Integer.parseInt(Integer.toBinaryString(hour));
-
-        //jede zahl in Ziffer umwandlen und dan in binär
-        System.out.println(binsec);
-        System.out.println(binmin);
-        System.out.println(binhour);
-
-
-    }
     }
 
 

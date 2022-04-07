@@ -9,7 +9,7 @@ import java.sql.Time;
  * @author jhuber
  * Ändert den Text des Labels, welches die Uhrzeit im Digital-Format ausgibt.
  */
-public class DigitalViewGUI extends ViewInterface {
+public class DigitalViewGUI {
     protected Label l;
 
     /**

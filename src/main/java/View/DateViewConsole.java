@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * @author david
  */
-public class DateViewConsole extends ViewInterface
+public class DateViewConsole
 {
 	/**
 	 * Gibt ein Datum aus

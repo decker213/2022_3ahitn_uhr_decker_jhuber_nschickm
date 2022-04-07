@@ -1,7 +1,7 @@
 package View;
 
 
-public class AnalogViewGUI extends ViewInterface {
+public class AnalogViewGUI {
 
     public AnalogViewGUI() {
         super();

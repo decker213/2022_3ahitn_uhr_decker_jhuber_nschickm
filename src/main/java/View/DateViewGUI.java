@@ -6,7 +6,7 @@ import javafx.scene.control.Label;
  * @author jhuber
  * Ändert den Text des Labels, welches das Datum ausgibt.
  */
-public class DateViewGUI extends ViewInterface {
+public class DateViewGUI {
 
     protected Label l;
 
