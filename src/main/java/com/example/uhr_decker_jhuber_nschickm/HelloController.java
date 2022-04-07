@@ -40,14 +40,15 @@ public class HelloController {
         avg.display(new Time(System.currentTimeMillis()));
     }
 
+    @FXML
+    void showBinaryUhr(ActionEvent event) throws IOException {
+        bvg.display(new Time(System.currentTimeMillis()));
+    }
+
     public void initialize() {
         avg = new AnalogViewGUI(mainpane);
+        bvg = new BinaryViewGUI(mainpane);
     }
-
-    public void binaryClock(){
-
-    }
-
 
 }
 

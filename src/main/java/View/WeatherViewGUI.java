@@ -6,7 +6,7 @@ import javafx.scene.control.Label;
  * @author jhuber
  * Ändert den Text des Labels, welches das Wetter ausgibt.
  */
-public class WeatherViewGUI extends ViewInterface {
+public class WeatherViewGUI  {
 
     protected Label l;
 

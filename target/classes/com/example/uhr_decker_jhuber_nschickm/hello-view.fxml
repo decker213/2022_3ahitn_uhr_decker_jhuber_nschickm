@@ -17,7 +17,7 @@
                         <Insets left="10.0" top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" text="Binaryuhr">
+                  <Button mnemonicParsing="false" onAction="#showBinaryUhr" prefHeight="45.0" prefWidth="80.0" text="Binaryuhr">
                      <VBox.margin>
                         <Insets left="10.0" top="10.0" />
                      </VBox.margin>

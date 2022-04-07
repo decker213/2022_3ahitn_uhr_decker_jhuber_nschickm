@@ -1,27 +1,27 @@
 package View;
 
 
-import javafx.scene.Group;
-import javafx.scene.Scene;
+import com.example.uhr_decker_jhuber_nschickm.Fxmlloader;
+
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.Time;
 
 public class BinaryViewGUI {
+    private BorderPane mainpane;
 
-    public BinaryViewGUI() {
-        super();
+    public BinaryViewGUI(BorderPane borderPane) {
+        mainpane = borderPane;
     }
 
-    public void display(Stage stage) throws IOException {
+    public void display(Time time) throws IOException {
 
-        Group root = new Group();
-
-        Scene scene = new Scene(root, 800, 800);
-        scene.setFill(Color.BEIGE);
+        Fxmlloader object = new Fxmlloader();
+        Pane view = object.getPage("BinaryClock.fxml");
 
         // Kreise für Stunden zeichnen
         int counthour = 0;
@@ -91,8 +91,7 @@ public class BinaryViewGUI {
         }
 
         //Aktuelle Uhr Zeit hohlen und aufteilen in Stunde, Minuten und Sekunden
-        Time time = new Time(System.currentTimeMillis());
-        System.out.println(time);
+
         String[] parts = time.toString().split(":");
         int hour = Integer.parseInt(parts[0]);
         int min = Integer.parseInt(parts[1]);
@@ -194,12 +193,10 @@ public class BinaryViewGUI {
             }
         }
 
-        root.getChildren().addAll(circArrayHour);
-        root.getChildren().addAll(circArrayMin);
-        root.getChildren().addAll(circArraySec);
-        stage.setScene(scene);
-        stage.show();
-
+        mainpane.getChildren().addAll(circArrayHour);
+        mainpane.getChildren().addAll(circArrayMin);
+        mainpane.getChildren().addAll(circArraySec);
+        mainpane.setCenter(view);
     }
 }
 
