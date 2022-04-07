@@ -4,7 +4,7 @@ package View;
 /**
  * @author david
  */
-public class WeatherVIewConsole   {
+public class WeatherVIewConsole {
 
     /**
      * Gibt Details zu den Wetter Daten aus
