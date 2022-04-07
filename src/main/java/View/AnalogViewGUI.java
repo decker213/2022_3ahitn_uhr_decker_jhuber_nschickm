@@ -1,33 +1,30 @@
 package View;
 
 
-import com.example.uhr_decker_jhuber_nschickm.HelloApplication;
-import com.example.uhr_decker_jhuber_nschickm.HelloControllerAnalog;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
+import com.example.uhr_decker_jhuber_nschickm.Fxmlloader;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Line;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.Time;
 
 public class AnalogViewGUI {
 
-    AnchorPane anchorPane1;
+    BorderPane mainpane;
 
-    public AnalogViewGUI(AnchorPane anchorPane) {
-        this.anchorPane1 = anchorPane;
+    public AnalogViewGUI(BorderPane borderPane) {
+        mainpane = borderPane;
     }
 
-    public void display(Time time) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("hello-view2.fxml"));
-        AnchorPane anchorPane = fxmlLoader.load();
-        HelloControllerAnalog helloControllerAnalog = fxmlLoader.getController();
+    public void display(Time time) {
+        Fxmlloader object = new Fxmlloader();
+        Pane view = object.getPage("Analog-Uhr.fxml");
 
         double alpha = 270 - time.getMinutes() * 6;
-        double start_x = 200;
-        double start_y = 200;
+        double start_x = 150;
+        double start_y = 150;
         double length = 175;
 
         double end_x = start_x + length * Math.cos(alpha);
@@ -35,8 +32,10 @@ public class AnalogViewGUI {
 
         Line line = new Line(start_x, start_y, end_x, end_y);
 
-        anchorPane.getChildren().add(line);
-        anchorPane1.getChildren().add(anchorPane);
+        mainpane.getChildren().add(line);
+        mainpane.setCenter(view);
     }
+
+
 }
 
