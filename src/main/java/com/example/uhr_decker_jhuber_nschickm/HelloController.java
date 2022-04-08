@@ -5,8 +5,15 @@ import Model.Timer;
 import Model.Wecker;
 import Model.Zeitzone;
 import View.*;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+
+import java.io.IOException;
+import java.sql.Time;
 
 public class HelloController {
 
@@ -21,18 +28,27 @@ public class HelloController {
     private WeatherViewGUI wvg;
     private TemperatureViewGUI tvg;
 
-    @FXML
-    private Label welcomeText;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    private BorderPane mainpane;
+
+    @FXML
+    private Button showAnalogUhrbtn;
+
+    @FXML
+    void showAnalogUhr(ActionEvent event) {
+        avg.display(new Time(System.currentTimeMillis()));
     }
 
-    public void binaryClock(){
-
+    @FXML
+    void showBinaryUhr(ActionEvent event) throws IOException {
+        bvg.display(new Time(System.currentTimeMillis()));
     }
 
+    public void initialize() {
+        avg = new AnalogViewGUI(mainpane);
+        bvg = new BinaryViewGUI(mainpane);
+    }
 
 }
 
