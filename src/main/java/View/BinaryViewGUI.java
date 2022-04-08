@@ -29,8 +29,8 @@ public class BinaryViewGUI {
         for (int i = 0; i < 4; i++) {
             circArrayHour[i] = new Circle();
             circArrayHour[i].setRadius(20);
-            circArrayHour[i].setCenterX(90);
-            circArrayHour[i].setCenterY(40 * i);
+            circArrayHour[i].setCenterX(170);
+            circArrayHour[i].setCenterY(100+(40 * i));
             circArrayHour[i].setFill(Color.GRAY);
             counthour++;
             if (counthour == 4) {
@@ -38,8 +38,8 @@ public class BinaryViewGUI {
                     i++;
                     circArrayHour[i] = new Circle();
                     circArrayHour[i].setRadius(20);
-                    circArrayHour[i].setCenterX(40);
-                    circArrayHour[i].setCenterY(80 + (40 * i2));
+                    circArrayHour[i].setCenterX(120);
+                    circArrayHour[i].setCenterY(100+ (80 + (40 * i2)));
                     circArrayHour[i].setFill(Color.GRAY);
                 }
             }
@@ -52,8 +52,8 @@ public class BinaryViewGUI {
         for (int o = 0; o < 4; o++) {
             circArrayMin[o] = new Circle();
             circArrayMin[o].setRadius(20);
-            circArrayMin[o].setCenterX(200);
-            circArrayMin[o].setCenterY(40 * o);
+            circArrayMin[o].setCenterX(280);
+            circArrayMin[o].setCenterY(100+(40 * o));
             circArrayMin[o].setFill(Color.GRAY);
             countMin++;
             if (countMin == 4) {
@@ -61,8 +61,8 @@ public class BinaryViewGUI {
                     o++;
                     circArrayMin[o] = new Circle();
                     circArrayMin[o].setRadius(20);
-                    circArrayMin[o].setCenterX(150);
-                    circArrayMin[o].setCenterY(40 + (40 * o2));
+                    circArrayMin[o].setCenterX(230);
+                    circArrayMin[o].setCenterY(100+(40 + (40 * o2)));
                     circArrayMin[o].setFill(Color.GRAY);
                 }
             }
@@ -74,8 +74,8 @@ public class BinaryViewGUI {
         for (int u = 0; u < 4; u++) {
             circArraySec[u] = new Circle();
             circArraySec[u].setRadius(20);
-            circArraySec[u].setCenterX(310);
-            circArraySec[u].setCenterY(40 * u);
+            circArraySec[u].setCenterX(390);
+            circArraySec[u].setCenterY(100+(40 * u));
             circArraySec[u].setFill(Color.GRAY);
             countSec++;
             if (countSec == 4) {
@@ -83,8 +83,8 @@ public class BinaryViewGUI {
                     u++;
                     circArraySec[u] = new Circle();
                     circArraySec[u].setRadius(20);
-                    circArraySec[u].setCenterX(260);
-                    circArraySec[u].setCenterY(40 + (40 * u2));
+                    circArraySec[u].setCenterX(340);
+                    circArraySec[u].setCenterY(100+(40 + (40 * u2)));
                     circArraySec[u].setFill(Color.GRAY);
                 }
             }
