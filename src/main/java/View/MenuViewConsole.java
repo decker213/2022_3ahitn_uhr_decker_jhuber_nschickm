@@ -5,7 +5,7 @@ import java.sql.SQLOutput;
 /**
  * @author jhuber
  */
-public class MenuViewConsole extends ViewInterface {
+public class MenuViewConsole {
 
 
     /**
