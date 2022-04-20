@@ -36,17 +36,24 @@ public class HelloController {
     public Label weckTimeshow;
     public Button weckerbtnid;
     public Label date;
+    public TextField TimerTime;
+    public Label TimerTimeshow;
+    public Button timerbtnid1;
     private Timer timer;
     private Wecker wecker;
     private Zeitzone zeitzone;
     private Stoppuhr stoppuhr;
     private DigitalViewGUI digitalvg;
+    private AnalogViewGUI avg;
     private DateViewGUI datevg;
     private BinaryViewGUI bvg;
     private WeatherViewGUI wvg;
     private TemperatureViewGUI tvg;
     private WeckerViewGUI wevg;
+    private BinaryController bc;
     private WeckerController wc;
+    private TimerController tc;
+    private TimerViewGUI tivg;
 
 
 
@@ -74,8 +81,6 @@ public class HelloController {
         secondaryStage.show();
     }
 
-
-
     public void showDigitaluhr(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Digital-Uhr.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -83,7 +88,6 @@ public class HelloController {
         secondaryStage.setScene(scene);
         secondaryStage.show();
     }
-
 
     public void showWeatherTemp(ActionEvent event) throws IOException {
         wvg.display(stadt.getText());
@@ -99,7 +103,6 @@ public class HelloController {
         //wevg.display();
         wc.weckerViewGUI.display();
         wc.weckerViewGUI.iscurrentWecker();
-        System.out.println(wc.weckerViewGUI.iscurrentWecker());
     }
 
     public void initialize() {
@@ -107,7 +110,12 @@ public class HelloController {
         wvg = new WeatherViewGUI(mainpane, wetter, temperatur, stadt, date);
         wevg = new WeckerViewGUI(mainpane);
         wc = new WeckerController(mainpane);
+        tivg = new TimerViewGUI(mainpane);
+        tc = new TimerController(mainpane);
     }
 
+    public void timer(ActionEvent event) throws IOException {
+        tc.timerViewGUI.display();
+    }
 }
 
