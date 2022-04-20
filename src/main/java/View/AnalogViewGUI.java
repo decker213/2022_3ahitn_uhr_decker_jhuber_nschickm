@@ -19,13 +19,11 @@ public class AnalogViewGUI {
     private AnchorPane h;
     private AnchorPane min;
     private AnchorPane sec;
-    private BorderPane mainpane;
 
     public AnalogViewGUI(AnchorPane h, AnchorPane min, AnchorPane sec) {
         this.h = h;
         this.min = min;
         this.sec = sec;
-        this.mainpane = mainpane;
     }
 
     public void display(Time time) {
@@ -33,9 +31,9 @@ public class AnalogViewGUI {
         double alphamin = time.getMinutes() * 6 - alphah;
         double alphasec = time.getSeconds() * 6 - alphah;
 
-        h.getTransforms().add(new Rotate(alphah));
-        min.getTransforms().add(new Rotate(alphamin));
-        sec.getTransforms().add(new Rotate(alphasec));
+        h.setRotate(alphah);
+        min.setRotate(alphamin);
+        sec.setRotate(alphasec);
     }
 
 }

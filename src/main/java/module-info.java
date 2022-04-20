@@ -6,7 +6,6 @@ module com.example.uhr_decker_jhuber_nschickm {
     requires java.compiler;
     requires java.desktop;
 
-
     opens com.example.uhr_decker_jhuber_nschickm to javafx.fxml;
     exports com.example.uhr_decker_jhuber_nschickm;
     exports Model;
