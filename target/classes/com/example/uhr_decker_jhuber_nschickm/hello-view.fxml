@@ -61,9 +61,14 @@
          <top>
             <Button mnemonicParsing="false" onAction="#showMainPage" text="X" BorderPane.alignment="TOP_RIGHT" />
          </top>
-         <right>
-            <Button fx:id="weckerbtnid" mnemonicParsing="false" onAction="#wecker" text="Wecker" BorderPane.alignment="CENTER" />
-         </right>
+         <bottom>
+            <AnchorPane prefHeight="43.0" prefWidth="388.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="weckerbtnid" layoutX="212.0" layoutY="9.0" mnemonicParsing="false" onAction="#wecker" text="Wecker" />
+                  <Button fx:id="timerbtnid1" layoutX="146.0" layoutY="9.0" mnemonicParsing="false" onAction="#timer" text="Timer" />
+               </children>
+            </AnchorPane>
+         </bottom>
       </BorderPane>
    </children>
 </AnchorPane>

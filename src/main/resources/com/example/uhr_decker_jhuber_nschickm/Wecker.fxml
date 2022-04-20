@@ -7,7 +7,6 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uhr_decker_jhuber_nschickm.HelloController">
    <children>
-  <!--    <Button fx:id="weckerbtn" layoutX="38.0" layoutY="86.0" mnemonicParsing="false" onAction="#showWecker" text="Button" />  -->
       <TextField fx:id="weckTime" layoutX="21.0" layoutY="49.0" />
       <Label fx:id="weckTimeshow" layoutX="286.0" layoutY="53.0" text="Label" />
    </children>

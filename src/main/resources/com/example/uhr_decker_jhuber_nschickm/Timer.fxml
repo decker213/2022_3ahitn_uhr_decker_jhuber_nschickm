@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.uhr_decker_jhuber_nschickm.HelloController"
+            prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <TextField fx:id="TimerTime" layoutX="21.0" layoutY="49.0" />
+        <Label fx:id="TimerTimeshow" layoutX="286.0" layoutY="53.0" text="Label" />
+    </children>
+</AnchorPane>
