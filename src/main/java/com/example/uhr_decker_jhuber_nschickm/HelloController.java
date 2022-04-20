@@ -41,7 +41,6 @@ public class HelloController {
     private Zeitzone zeitzone;
     private Stoppuhr stoppuhr;
     private DigitalViewGUI digitalvg;
-    private AnalogViewGUI avg;
     private DateViewGUI datevg;
     private BinaryViewGUI bvg;
     private WeatherViewGUI wvg;
@@ -49,7 +48,6 @@ public class HelloController {
     private WeckerViewGUI wevg;
     private BinaryController bc;
     private WeckerController wc;
-    private DigitalController dc;
 
 
 
@@ -60,34 +58,12 @@ public class HelloController {
     private Button showAnalogUhrbtn;
 
     @FXML
-    void showAnalogUhr(ActionEvent event) {
-        Thread thread = new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                Runnable updater = new Runnable() {
-
-                    @Override
-                    public void run() {
-                        avg.display(new Time(System.currentTimeMillis()));
-                    }
-                };
-
-                while (true) {
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException ex) {
-                    }
-
-                    // UI update is run on the Application thread
-                    Platform.runLater(updater);
-                }
-            }
-
-        });
-        // don't let thread prevent JVM shutdown
-        thread.setDaemon(true);
-        thread.start();
+    void showAnalogUhr(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Analog-Uhr.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage secondaryStage = new Stage();
+        secondaryStage.setScene(scene);
+        secondaryStage.show();
     }
 
     @FXML
@@ -132,8 +108,8 @@ public class HelloController {
         Stage secondaryStage = new Stage();
         secondaryStage.setScene(scene);
         secondaryStage.show();
-
     }
+
 
     public void showWeatherTemp(ActionEvent event) throws IOException {
         wvg.display(stadt.getText());
@@ -153,13 +129,11 @@ public class HelloController {
     }
 
     public void initialize() {
-        avg = new AnalogViewGUI(mainpane);
         bc = new BinaryController(mainpane);
         bvg = new BinaryViewGUI(mainpane);
         wvg = new WeatherViewGUI(mainpane, wetter, temperatur, stadt, date);
         wevg = new WeckerViewGUI(mainpane);
         wc = new WeckerController(mainpane);
-        dc = new DigitalController();
     }
 
 }

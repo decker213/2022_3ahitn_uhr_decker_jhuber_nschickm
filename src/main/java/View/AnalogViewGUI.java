@@ -9,40 +9,33 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
+import javafx.scene.transform.Rotate;
 
 import java.io.IOException;
 import java.sql.Time;
 
 public class AnalogViewGUI {
 
-    BorderPane mainpane;
+    private AnchorPane h;
+    private AnchorPane min;
+    private AnchorPane sec;
+    private BorderPane mainpane;
 
-    public AnalogViewGUI(BorderPane borderPane) {
-        mainpane = borderPane;
+    public AnalogViewGUI(AnchorPane h, AnchorPane min, AnchorPane sec, BorderPane mainpane) {
+        this.h = h;
+        this.min = min;
+        this.sec = sec;
+        this.mainpane = mainpane;
     }
 
     public void display(Time time) {
-        Fxmlloader object = new Fxmlloader();
-        Pane view = object.getPage("Analog-Uhr.fxml");
+        double alphah = time.getHours() * 6;
+        double alphamin = time.getMinutes() * 6 - alphah;
+        double alphasec = time.getSeconds() * 6 - alphah;
 
-        double alphamin = 270 - time.getMinutes() * 6;
-        double start_x = 300;
-        double start_y = 20;
-        double lengthmin = 120;
-
-        double end_x = start_x + lengthmin * Math.cos(alphamin);
-        double end_y = start_y + lengthmin * Math.sin(alphamin);
-
-        Line line = new Line(start_x, start_y, end_x, end_y);
-        Circle circle = new Circle();
-        circle.setCenterX(100.0f);
-        circle.setCenterY(100.0f);
-        circle.setRadius(75.0f);
-        circle.setFill(Color.WHITE);
-
-        mainpane.getChildren().add(circle);
-        mainpane.getChildren().add(line);
-        mainpane.setCenter(view);
+        h.getTransforms().add(new Rotate(alphah));
+        min.getTransforms().add(new Rotate(alphamin));
+        sec.getTransforms().add(new Rotate(alphasec));
     }
 
 }
