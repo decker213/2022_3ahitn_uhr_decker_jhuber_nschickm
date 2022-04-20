@@ -29,6 +29,10 @@ public class HelloController {
     public Label temperatur;
     public TextField stadt;
     public Button abfragen;
+    public Button weckerbtn;
+    public TextField weckTime;
+    public Label weckTimeshow;
+    public Button weckerbtnid;
     private Timer timer;
     private Wecker wecker;
     private Zeitzone zeitzone;
@@ -41,6 +45,7 @@ public class HelloController {
     private TemperatureViewGUI tvg;
     private WeckerViewGUI wevg;
     private BinaryController bc;
+    private WeckerController wc;
 
 
 
@@ -123,6 +128,7 @@ public class HelloController {
         bvg = new BinaryViewGUI(mainpane);
         wvg = new WeatherViewGUI(mainpane, wetter, temperatur, stadt);
         wevg = new WeckerViewGUI(mainpane);
+        wc = new WeckerController(mainpane);
     }
 
     public void showWeatherTemp(ActionEvent event) throws IOException {
@@ -135,8 +141,12 @@ public class HelloController {
 
     }
 
-    public void wecker(ActionEvent event){
+    public void wecker(ActionEvent event) throws IOException {
+        //wevg.display();
+        wc.weckerViewGUI.display();
 
     }
+
+
 }
 

@@ -27,9 +27,12 @@ public class Wecker {
 
         BufferedReader br = new BufferedReader(new FileReader(wecker));
         String st;
-        while ((st = br.readLine()) != null)
+        while ((st = br.readLine()) != null) {
             this.time = st;
-    }
+        }
+        }
+
+
 
     /**
      * @return true wenn die Uhrzeit gleich der Weckzeit ist
@@ -41,12 +44,20 @@ public class Wecker {
 
         String[] parts = timenow.toString().split(":");
 
+        System.out.println(parts[0]);
+        System.out.println(time);
         if ((parts[0] + ":" + parts[1]).equals(String.valueOf(time))) {
             rv = true;
         }
         return rv;
     }
 
-    }
 
+    public static void main(String[] args) throws IOException {
+
+        Wecker w = new Wecker();
+        w.addWecker("16:02");
+        w.iscurrentWecker();
+    }
+}
 
