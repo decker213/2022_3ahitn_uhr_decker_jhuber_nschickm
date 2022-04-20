@@ -30,26 +30,21 @@
                      </VBox.margin>
 
                   </Button>
-                  <Label fx:id="cityname" prefHeight="25.0" prefWidth="80.0" text="Label">
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Label fx:id="wetter" prefHeight="25.0" prefWidth="80.0" text="Label">
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Label fx:id="temperatur" prefHeight="25.0" prefWidth="80.0" text="Label">
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
-                  </Label>
                   <TextField fx:id="stadt" minWidth="11.0" prefHeight="20.0" prefWidth="20.0">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
                   </TextField>
+                  <Label fx:id="wetter" prefHeight="25.0" prefWidth="80.0" text="Label">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="temperatur" prefHeight="25.0" prefWidth="80.0" text="Label">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
                   <Button fx:id="abfragen" mnemonicParsing="false" onAction="#showWeatherTemp" prefHeight="25.0" prefWidth="80.0" text="Abfragen">
                      <VBox.margin>
                         <Insets left="10.0" top="10.0" />
@@ -58,6 +53,12 @@
                </children>
             </VBox>
          </left>
+         <top>
+            <Button mnemonicParsing="false" onAction="#showMainPage" text="X" BorderPane.alignment="TOP_RIGHT" />
+         </top>
+         <right>
+            <Button mnemonicParsing="false" onAction="#wecker" text="Wecker" BorderPane.alignment="CENTER" />
+         </right>
       </BorderPane>
    </children>
 </AnchorPane>

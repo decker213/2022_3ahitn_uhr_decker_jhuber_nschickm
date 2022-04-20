@@ -28,28 +28,23 @@ public class WeatherViewGUI {
 
     private BorderPane mainpane;
 
-    protected Label cityname;
     protected Label wetter;
     protected Label temperatur;
     protected TextField stadt;
-    protected Button abfragen;
+
 
     /**
      * Konstruktor
      *
-     * @param cityname      das Label was zu ändern ist
      * @param temperatur das Label was zu ändern ist
      * @param wetter     das Label was zu ändern ist
      */
-    public WeatherViewGUI(BorderPane mainpane, Label cityname, Label wetter, Label temperatur, TextField stadt, Button abfragen) {
+    public WeatherViewGUI(BorderPane mainpane, Label wetter, Label temperatur, TextField stadt) {
         this.mainpane = mainpane;
-        this.cityname = cityname;
         this.wetter = wetter;
         this.temperatur = temperatur;
         this.stadt = stadt;
-        this.abfragen = abfragen;
 
-        cityname.setVisible(false);
         wetter.setVisible(false);
         temperatur.setVisible(false);
     }
@@ -90,14 +85,12 @@ public class WeatherViewGUI {
                 double min = root.list.get(i).main.getTempMin() - 273.15;
                 double min1 = Math.rint(min * 100) / 100;
 
-                cityname.setVisible(true);
+
                 wetter.setVisible(true);
                 temperatur.setVisible(true);
-                abfragen.setVisible(false);
 
 
 
-               cityname.setText(root.city.getName());
                 wetter.setText(root.list.get(i).weather.get(j).getMain());
                 temperatur.setText(String.valueOf(min1));
             }

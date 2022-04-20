@@ -7,11 +7,14 @@ import Model.Zeitzone;
 import View.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 import java.awt.*;
 import java.io.IOException;
@@ -35,6 +38,7 @@ public class HelloController {
     private BinaryViewGUI bvg;
     private WeatherViewGUI wvg;
     private TemperatureViewGUI tvg;
+    private WeckerViewGUI wevg;
 
 
     @FXML
@@ -56,11 +60,22 @@ public class HelloController {
     public void initialize() {
         avg = new AnalogViewGUI(mainpane);
         bvg = new BinaryViewGUI(mainpane);
-        wvg = new WeatherViewGUI(mainpane, cityname, wetter, temperatur, stadt, abfragen);
+        wvg = new WeatherViewGUI(mainpane, wetter, temperatur, stadt);
+        wevg = new WeckerViewGUI(mainpane);
     }
 
     public void showWeatherTemp(ActionEvent event) throws IOException {
         wvg.display(stadt.getText());
+    }
+
+    // Zur Startseite kommen, geht nicht ganzes Fenster schließt sich anstatt der aktuellen Scene
+    public void showMainPage(ActionEvent event) {
+        ((Stage) ((Node) event.getSource()).getScene().getWindow()).close();
+
+    }
+
+    public void wecker(ActionEvent event){
+
     }
 }
 
