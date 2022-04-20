@@ -120,7 +120,6 @@ public class HelloController {
     public void initialize() {
         avg = new AnalogViewGUI(mainpane);
         bc = new BinaryController(mainpane);
-        wvg = new WeatherViewGUI(mainpane, cityname, wetter, temperatur, stadt, abfragen);
         bvg = new BinaryViewGUI(mainpane);
         wvg = new WeatherViewGUI(mainpane, wetter, temperatur, stadt);
         wevg = new WeckerViewGUI(mainpane);
