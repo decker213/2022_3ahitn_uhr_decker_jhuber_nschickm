@@ -8,8 +8,10 @@ import View.*;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -47,6 +49,7 @@ public class HelloController {
     private WeckerViewGUI wevg;
     private BinaryController bc;
     private WeckerController wc;
+    private DigitalController dc;
 
 
 
@@ -123,13 +126,13 @@ public class HelloController {
         thread.start();
     }
 
-    public void initialize() {
-        avg = new AnalogViewGUI(mainpane);
-        bc = new BinaryController(mainpane);
-        bvg = new BinaryViewGUI(mainpane);
-        wvg = new WeatherViewGUI(mainpane, wetter, temperatur, stadt, date);
-        wevg = new WeckerViewGUI(mainpane);
-        wc = new WeckerController(mainpane);
+    public void showDigitaluhr(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Digital-Uhr.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage secondaryStage = new Stage();
+        secondaryStage.setScene(scene);
+        secondaryStage.show();
+
     }
 
     public void showWeatherTemp(ActionEvent event) throws IOException {
@@ -149,6 +152,15 @@ public class HelloController {
         System.out.println(wc.weckerViewGUI.iscurrentWecker());
     }
 
+    public void initialize() {
+        avg = new AnalogViewGUI(mainpane);
+        bc = new BinaryController(mainpane);
+        bvg = new BinaryViewGUI(mainpane);
+        wvg = new WeatherViewGUI(mainpane, wetter, temperatur, stadt, date);
+        wevg = new WeckerViewGUI(mainpane);
+        wc = new WeckerController(mainpane);
+        dc = new DigitalController();
+    }
 
 }
 

@@ -20,9 +20,10 @@ public class DigitalViewGUI {
         this.l = l;
     }
 
+
     /**
      * Ändert das Label
-     * @param t die Zeiot auf die das Label gesetzt wird
+     * @param t die Zeit auf die das Label gesetzt wird
      */
     public void display(Time t){
         l.setText(String.valueOf(t));
