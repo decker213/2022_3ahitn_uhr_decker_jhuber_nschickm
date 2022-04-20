@@ -21,7 +21,7 @@ public class AnalogViewGUI {
     private AnchorPane sec;
     private BorderPane mainpane;
 
-    public AnalogViewGUI(AnchorPane h, AnchorPane min, AnchorPane sec, BorderPane mainpane) {
+    public AnalogViewGUI(AnchorPane h, AnchorPane min, AnchorPane sec) {
         this.h = h;
         this.min = min;
         this.sec = sec;

@@ -10,21 +10,18 @@ import java.sql.Time;
 
 public class AnalogController {
     @FXML
+    public javafx.scene.layout.AnchorPane AnchorPane;
+    @FXML
     private AnchorPane hour;
     @FXML
     private AnchorPane min;
     @FXML
     private AnchorPane seconds;
     AnalogViewGUI analogViewGUI;
-    BorderPane mainpane;
 
-    AnalogController(BorderPane mainpane) {
-        this.mainpane = mainpane;
-        initialize();
-    }
 
     public void initialize() {
-        analogViewGUI = new AnalogViewGUI(hour, min, seconds, mainpane);
+        analogViewGUI = new AnalogViewGUI(hour, min, seconds);
         Thread thread = new Thread(new Runnable() {
 
             @Override

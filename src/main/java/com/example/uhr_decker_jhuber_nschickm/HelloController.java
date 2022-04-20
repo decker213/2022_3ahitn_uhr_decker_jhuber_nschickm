@@ -59,7 +59,7 @@ public class HelloController {
 
     @FXML
     void showAnalogUhr(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Analog-Uhr.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Analog-Uhr.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage secondaryStage = new Stage();
         secondaryStage.setScene(scene);

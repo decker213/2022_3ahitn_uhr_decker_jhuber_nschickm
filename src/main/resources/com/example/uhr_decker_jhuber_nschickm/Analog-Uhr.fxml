@@ -5,28 +5,25 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 
-
-<AnchorPane fx:id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uhr_decker_jhuber_nschickm.AnalogController">
+<AnchorPane fx:id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uhr_decker_jhuber_nschickm.AnalogController">
     <children>
+            <Label layoutX="79.0" layoutY="184.0" text="9" />
+            <Label layoutX="197.0" layoutY="308.0" text="6" />
+            <Label layoutX="309.0" layoutY="192.0" text="3" />
+            <Label layoutX="194.0" layoutY="76.0" text="12" />
         <Circle fill="WHITE" layoutX="200.0" layoutY="200.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
         <AnchorPane fx:id="hour" layoutX="100.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0">
-            <children>
-                <Line endX="100.0" endY="22.400009155273438" startX="100.00001525878906" startY="99.99998474121094" />
-                <AnchorPane fx:id="min" prefHeight="200.0" prefWidth="200.0">
-                    <children>
-                        <Line endX="100.0" endY="39.99998474121094" startX="100.00001525878906" startY="99.99998474121094" />
-                    </children>
-                </AnchorPane>
-                <AnchorPane fx:id="seconds" prefHeight="200.0" prefWidth="200.0">
-                    <children>
-                        <Line endX="100.0" endY="59.19999694824219" startX="100.00001525878906" startY="99.99998474121094" />
-                        <Label layoutX="92.0" layoutY="5.0" text="12" />
-                        <Label layoutX="182.0" layoutY="83.0" text="3" />
-                        <Label layoutX="97.0" layoutY="168.0" text="6" />
-                        <Label layoutX="10.0" layoutY="92.0" text="9" />
-                    </children>
-                </AnchorPane>
-            </children>
+            <Line endX="100.0" endY="22.400009155273438" startX="100.00001525878906" startY="99.99998474121094"/>
+            <AnchorPane fx:id="min" prefHeight="200.0" prefWidth="200.0">
+                <children>
+                    <Line endX="100.0" endY="39.99998474121094" startX="100.00001525878906" startY="99.99998474121094"/>
+                </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seconds" prefHeight="200.0" prefWidth="200.0">
+                <children>
+                    <Line endX="100.0" endY="59.19999694824219" startX="100.00001525878906" startY="99.99998474121094"/>
+                </children>
+            </AnchorPane>
         </AnchorPane>
     </children>
 </AnchorPane>
