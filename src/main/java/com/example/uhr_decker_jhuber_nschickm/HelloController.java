@@ -46,7 +46,6 @@ public class HelloController {
     private WeatherViewGUI wvg;
     private TemperatureViewGUI tvg;
     private WeckerViewGUI wevg;
-    private BinaryController bc;
     private WeckerController wc;
 
 
@@ -68,39 +67,14 @@ public class HelloController {
 
     @FXML
     void showBinaryUhr(ActionEvent event) throws IOException {
-
-        Thread thread = new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                Runnable updater = new Runnable() {
-
-                    @Override
-                    public void run() {
-                        try {
-                            bc.binaryViewGUI.display(new Time(System.currentTimeMillis()));
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                };
-
-                while (true) {
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException ex) {
-                    }
-
-                    // UI update is run on the Application thread
-                    Platform.runLater(updater);
-                }
-            }
-
-        });
-        // don't let thread prevent JVM shutdown
-        thread.setDaemon(true);
-        thread.start();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Binaryclock.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage secondaryStage = new Stage();
+        secondaryStage.setScene(scene);
+        secondaryStage.show();
     }
+
+
 
     public void showDigitaluhr(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Digital-Uhr.fxml"));
@@ -129,7 +103,6 @@ public class HelloController {
     }
 
     public void initialize() {
-        bc = new BinaryController(mainpane);
         bvg = new BinaryViewGUI(mainpane);
         wvg = new WeatherViewGUI(mainpane, wetter, temperatur, stadt, date);
         wevg = new WeckerViewGUI(mainpane);

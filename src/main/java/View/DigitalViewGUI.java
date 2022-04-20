@@ -14,6 +14,7 @@ public class DigitalViewGUI {
 
     /**
      * Konstruktor
+     *
      * @param l das Label was zu ändern ist
      */
     public DigitalViewGUI(Label l) {
@@ -23,10 +24,15 @@ public class DigitalViewGUI {
 
     /**
      * Ändert das Label
+     *
      * @param t die Zeit auf die das Label gesetzt wird
      */
-    public void display(Time t){
-        l.setText(String.valueOf(t));
+    public void display(Time t) {
+        if (t.getHours() <= 12) {
+            l.setText(String.valueOf(t) + "\n" + String.valueOf(t.getHours()) + ":" +String.valueOf(t.getMinutes()) + " am");
+        }else {
+            l.setText(String.valueOf(t) + "\n" + String.valueOf(t.getHours()-12) + ":" +String.valueOf(t.getMinutes()) + " pm");
+        }
     }
 
 }
