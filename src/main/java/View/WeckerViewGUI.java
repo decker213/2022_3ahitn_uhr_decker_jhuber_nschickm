@@ -3,7 +3,6 @@ package View;
 import com.example.uhr_decker_jhuber_nschickm.Fxmlloader;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 import javax.sound.midi.Soundbank;
@@ -16,6 +15,7 @@ import java.sql.Time;
 
 /**
  * @author nschickm
+ * Die Weckzeit muss in "hh:mm" erfolgen
  */
 public class WeckerViewGUI {
 
@@ -34,26 +34,30 @@ public class WeckerViewGUI {
 
         Fxmlloader object = new Fxmlloader();
         Pane view = object.getPage("Wecker.fxml");
-    //    weckTimeshow.setText(weckTime.getText());
 
+        //Buttons und Textfelder hier erstellt, weil die Wecker.fxml (Zeile 36) nicht richtig aufgerufen wird
+        JFrame f = new JFrame("Wecker");
+        final JTextField tf = new JTextField();
+        final JTextField tfout = new JTextField();
+        tf.setBounds(50, 50, 150, 20);
+        tfout.setBounds(50, 250, 150, 20);
+        JButton b = new JButton("Set Wecker");
+        b.setBounds(50, 100, 150, 20);
+        b.addActionListener(new ActionListener() {
 
-
-        JFrame f=new JFrame("Button Example");
-        final JTextField tf=new JTextField();
-        final JTextField tfout=new JTextField();
-        tf.setBounds(50,50, 150,20);
-        tfout.setBounds(50,250,150,20);
-        JButton b=new JButton("Set Wecker");
-        b.setBounds(50,100,95,30);
-        b.addActionListener(new ActionListener(){
-            String s;
             String stime;
+
+            /**
+             * Wird ausgefuehrt, wenn der "Set Wecker" - Button geklickt wird
+             * @param e
+             */
             public void actionPerformed(ActionEvent e) {
                 //  tf.setText("Welcome to Javatpoint.");
                 stime = tf.getText();
-                tfout.setText(stime);
 
-                 wecker = new File("WeckerTime");
+
+                //Die Weckzeit wird in die Datei WeckerTime gespeichert
+                wecker = new File("WeckerTime");
                 FileWriter fwWecker = null;
                 try {
                     fwWecker = new FileWriter(wecker);
@@ -73,78 +77,65 @@ public class WeckerViewGUI {
                     ex.printStackTrace();
                 }
 
-                final JTextField tfouttime=new JTextField();
-                tfouttime.setBounds(50,300,150,20);
+                // Wecker laeutet ausgabe
+                boolean rv = false;
 
-                BufferedReader br = null;
+                //Thread
                 try {
-                    br = new BufferedReader(new FileReader(wecker));
-                } catch (FileNotFoundException ex) {
+                    rv = iscurrentWecker();
+                } catch (IOException ex) {
                     ex.printStackTrace();
                 }
-                String st = null;
-                while (true) {
-                    try {
-                        if (!((st = br.readLine()) != null)) break;
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
-                    }
-                    
-                    this.stime = st;
-                    System.out.println("aaa " + stime);
-                    tfouttime.setText(this.stime);
+                if (rv) {
+                    tfout.setText("Wecker laeutet");
+                } else {
+                    tfout.setText("Wecker laeutet nicht");
                 }
-                
-                
-                f.add(tfouttime);
             }
         });
 
-        f.add(b);f.add(tf);f.add(tfout);
-        f.setSize(400,400);
+        f.add(b);
+        f.add(tf);
+        f.add(tfout);
+        f.setSize(400, 400);
         f.setLayout(null);
         f.setVisible(true);
-
-
-
-
-
         mainpane.setCenter(view);
     }
+
+    /**
+     * Die Weckzeit wird aus der Textdatei ausgelesen und mit der aktuellen Uhrzeit vergliechen
+     *
+     * @return true wenn die Weckzeit und aktuelle Uhrzeit gleich sind
+     * false wenn die Weckzeit und aktuelle Uhrzeit nicht sind
+     * @throws IOException
+     */
     public boolean iscurrentWecker() throws IOException {
         boolean rv = false;
         Time timenow = new Time(System.currentTimeMillis());
 
 
+        //auslesen
         BufferedReader br = new BufferedReader(new FileReader(wecker));
         String st;
         String WeckTimeEintrag = null;
         while ((st = br.readLine()) != null) {
             WeckTimeEintrag = st;
-            System.out.println("this " + WeckTimeEintrag);
+
         }
 
+        //aktuelle Uhrzeit
         String[] parts = timenow.toString().split(":");
 
-        String stime=null;
-        System.out.println("aa" + stime);
-        JTextField uhr = new JTextField();
-        uhr.setBounds(50,50,230,20);
-        if ((parts[0] + ":" + parts[1]).equals(String.valueOf(stime))) {
-           System.out.println("true");
-           uhr.setText("True");
+        //mit der aktullen Uhrzeit verlgeichen
+        if ((parts[0] + ":" + parts[1]).equals(String.valueOf(WeckTimeEintrag))) {
+            //Wecker laeutet
             rv = true;
+        } else {
+            //Wecker laeutet nicht
         }
-
-        System.out.println("false");
-        uhr.setText("False");
         return rv;
-
-
-
     }
-
-
 }
 
 
