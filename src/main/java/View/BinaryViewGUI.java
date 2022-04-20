@@ -11,6 +11,9 @@ import javafx.scene.shape.Circle;
 import java.io.IOException;
 import java.sql.Time;
 
+/**
+ * @author nschickm
+ */
 public class BinaryViewGUI {
     private BorderPane mainpane;
 

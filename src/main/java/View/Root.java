@@ -2,6 +2,9 @@ package View;
 
 import java.util.ArrayList;
 
+/**
+ * @author nschickm
+ */
 public class Root {
 
     public String cod;

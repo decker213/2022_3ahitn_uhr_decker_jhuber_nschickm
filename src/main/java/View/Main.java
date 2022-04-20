@@ -6,6 +6,9 @@ import com.google.gson.annotations.SerializedName;
 import javax.annotation.processing.Generated;
 import java.io.IOException;
 
+/**
+ * @author nschickm
+ */
 @Generated("jsonschema2pojo")
 public class Main {
 

@@ -4,6 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 import javax.annotation.processing.Generated;
 
+/**
+ * @author nschickm
+ */
 @Generated("jsonschema2pojo")
 public class Snow {
 

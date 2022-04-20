@@ -33,6 +33,7 @@ public class HelloController {
     public TextField weckTime;
     public Label weckTimeshow;
     public Button weckerbtnid;
+    public Label date;
     private Timer timer;
     private Wecker wecker;
     private Zeitzone zeitzone;
@@ -126,7 +127,7 @@ public class HelloController {
         avg = new AnalogViewGUI(mainpane);
         bc = new BinaryController(mainpane);
         bvg = new BinaryViewGUI(mainpane);
-        wvg = new WeatherViewGUI(mainpane, wetter, temperatur, stadt);
+        wvg = new WeatherViewGUI(mainpane, wetter, temperatur, stadt, date);
         wevg = new WeckerViewGUI(mainpane);
         wc = new WeckerController(mainpane);
     }
@@ -144,7 +145,8 @@ public class HelloController {
     public void wecker(ActionEvent event) throws IOException {
         //wevg.display();
         wc.weckerViewGUI.display();
-
+        wc.weckerViewGUI.iscurrentWecker();
+        System.out.println(wc.weckerViewGUI.iscurrentWecker());
     }
 
 
