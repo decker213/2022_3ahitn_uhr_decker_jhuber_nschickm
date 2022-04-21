@@ -23,6 +23,9 @@ import java.awt.*;
 import java.io.IOException;
 import java.sql.Time;
 
+/**
+ * @author decker, jhuber, nschickm
+ */
 public class HelloController {
 
 @FXML
@@ -63,6 +66,11 @@ public class HelloController {
     @FXML
     private Button showAnalogUhrbtn;
 
+    /**
+     *  Analoguhr wird angezeigt
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void showAnalogUhr(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Analog-Uhr.fxml"));
@@ -72,6 +80,11 @@ public class HelloController {
         secondaryStage.show();
     }
 
+    /**
+     *  Binaryuhr wird angezeigt
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void showBinaryUhr(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Binaryclock.fxml"));
@@ -81,6 +94,11 @@ public class HelloController {
         secondaryStage.show();
     }
 
+    /**
+     *  Digitaluhr wird angezeigt
+     * @param actionEvent
+     * @throws IOException
+     */
     public void showDigitaluhr(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Digital-Uhr.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -89,16 +107,29 @@ public class HelloController {
         secondaryStage.show();
     }
 
+    /**
+     *  Labels werden angezeigt und mit Daten versehen
+     * @param event
+     * @throws IOException
+     */
     public void showWeatherTemp(ActionEvent event) throws IOException {
         wvg.display(stadt.getText());
     }
 
-    // Zur Startseite kommen, geht nicht ganzes Fenster schließt sich anstatt der aktuellen Scene
+    /**
+     * Zur Startseite kommen, geht nicht ganzes Fenster schließt sich anstatt der aktuellen Scene
+     * @param event
+     */
     public void showMainPage(ActionEvent event) {
         ((Stage) ((Node) event.getSource()).getScene().getWindow()).close();
 
     }
 
+    /**
+     *  Das Wecker fxml wird angezeigt
+     * @param event
+     * @throws IOException
+     */
     public void wecker(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Wecker.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -113,6 +144,7 @@ public class HelloController {
         tivg = new TimerViewGUI(mainpane);
         tc = new TimerController(mainpane);
     }
+
 
     public void timer(ActionEvent event) throws IOException {
         tc.timerViewGUI.display();

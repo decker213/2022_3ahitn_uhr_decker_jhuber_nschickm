@@ -9,6 +9,7 @@ import java.sql.Time;
 
 /**
  * @author nschickm
+ * Mittels eines Threads wird Binaryuhr aktualisiert
  */
 public class BinaryController {
 

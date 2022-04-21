@@ -22,15 +22,25 @@ public class WeckerViewGUI {
 
     protected Label weckTimeshow;
     protected TextField weckTime;
-   protected AnchorPane anchorPane;
+    protected AnchorPane anchorPane;
 
     File wecker;
 
+    /**
+     * Konstruktor
+     *
+     * @param anchorPane
+     */
     public WeckerViewGUI(AnchorPane anchorPane) {
-     this.anchorPane=anchorPane;
+        this.anchorPane = anchorPane;
 
     }
 
+    /**
+     * Wird ausgegeben
+     *
+     * @throws IOException
+     */
     public void display() throws IOException {
 
         Fxmlloader object = new Fxmlloader();

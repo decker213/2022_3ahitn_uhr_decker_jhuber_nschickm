@@ -16,7 +16,7 @@ import java.util.Scanner;
 
 /**
  * @author nschickm
- * Ändert den Text des Labels, welches das Wetter ausgibt.
+ * Ändert den Text die Labels,auf die Daten der eingegebenen Stadt
  */
 public class WeatherViewGUI {
 

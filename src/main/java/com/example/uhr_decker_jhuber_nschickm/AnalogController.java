@@ -8,6 +8,9 @@ import javafx.scene.layout.BorderPane;
 
 import java.sql.Time;
 
+/**
+ * Mittels eines Threads wird Analoguhr aktualisiert
+ */
 public class AnalogController {
     @FXML
     public javafx.scene.layout.AnchorPane AnchorPane;
