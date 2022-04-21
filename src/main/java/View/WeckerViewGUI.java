@@ -104,7 +104,7 @@ public class WeckerViewGUI {
     }
 
     /**
-     * Die Weckzeit wird aus der Textdatei ausgelesen und mit der aktuellen Uhrzeit vergliechen
+     * Die Weckzeit wird aus der Textdatei ausgelesen und mit der aktuellen Uhrzeit verglichen
      *
      * @return true wenn die Weckzeit und aktuelle Uhrzeit gleich sind
      * false wenn die Weckzeit und aktuelle Uhrzeit nicht sind
