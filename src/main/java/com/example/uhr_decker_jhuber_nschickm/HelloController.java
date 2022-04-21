@@ -25,7 +25,7 @@ import java.sql.Time;
 
 public class HelloController {
 
-@FXML
+    @FXML
     public Label cityname;
     public Label wetter;
     public Label temperatur;
@@ -48,14 +48,23 @@ public class HelloController {
     private WeckerViewGUI wevg;
     private BinaryController bc;
     private WeckerController wc;
-
-
+    private Button stoppuhrbtn;
+    StoppuhrController stoppuhrController;
 
     @FXML
     private BorderPane mainpane;
 
     @FXML
     private Button showAnalogUhrbtn;
+
+    @FXML
+    void Stoppuhrbtnclicked(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Stoppuhr.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage secondaryStage = new Stage();
+        secondaryStage.setScene(scene);
+        secondaryStage.show();
+    }
 
     @FXML
     void showAnalogUhr(ActionEvent event) throws IOException {

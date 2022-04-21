@@ -27,9 +27,18 @@ public class AnalogViewGUI {
     }
 
     public void display(Time time) {
-        double alphah = time.getHours() * 6;
-        double alphamin = time.getMinutes() * 6 - alphah;
-        double alphasec = time.getSeconds() * 6 - alphah;
+        double alphah;
+        double alphamin;
+        double alphasec;
+
+        if (time.getHours() < 12) {
+            alphah = (time.getHours() - 12) * 30;
+        } else {
+            alphah = time.getHours() * 30;
+        }
+
+        alphamin = time.getMinutes() * 6 - alphah;
+        alphasec = time.getSeconds() * 6 - alphah;
 
         h.setRotate(alphah);
         min.setRotate(alphamin);

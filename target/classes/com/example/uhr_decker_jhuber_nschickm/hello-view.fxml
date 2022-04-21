@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="314.0" prefWidth="418.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uhr_decker_jhuber_nschickm.HelloController">
+<AnchorPane prefHeight="314.0" prefWidth="418.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uhr_decker_jhuber_nschickm.HelloController">
    <children>
       <BorderPane fx:id="mainpane" layoutX="15.0" layoutY="15.0" prefHeight="288.0" prefWidth="388.0">
          <left>
@@ -62,7 +62,12 @@
             <Button mnemonicParsing="false" onAction="#showMainPage" text="X" BorderPane.alignment="TOP_RIGHT" />
          </top>
          <right>
-            <Button fx:id="weckerbtnid" mnemonicParsing="false" onAction="#wecker" text="Wecker" BorderPane.alignment="CENTER" />
+            <VBox prefHeight="264.0" prefWidth="66.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="weckerbtnid" mnemonicParsing="false" onAction="#wecker" prefHeight="26.0" prefWidth="82.0" text="Wecker" />
+                  <Button mnemonicParsing="false" onAction="#Stoppuhrbtnclicked" prefHeight="26.0" prefWidth="78.0" text="Stoppuhr" />
+               </children>
+            </VBox>
          </right>
       </BorderPane>
    </children>
