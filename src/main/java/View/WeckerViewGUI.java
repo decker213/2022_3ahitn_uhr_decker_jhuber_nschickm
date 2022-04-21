@@ -21,8 +21,9 @@ import java.sql.Time;
 public class WeckerViewGUI {
 
     protected Label weckTimeshow;
-    protected TextField weckTime;
+    protected javafx.scene.control.TextField weckTime;
     protected AnchorPane anchorPane;
+    protected javafx.scene.control.Label l;
 
     File wecker;
 
@@ -31,10 +32,12 @@ public class WeckerViewGUI {
      *
      * @param anchorPane
      */
-    public WeckerViewGUI(AnchorPane anchorPane) {
+    public WeckerViewGUI(AnchorPane anchorPane, javafx.scene.control.TextField weckTime) {
         this.anchorPane = anchorPane;
+        this.weckTime = weckTime;
 
     }
+
 
     /**
      * Wird ausgegeben
@@ -46,72 +49,51 @@ public class WeckerViewGUI {
         Fxmlloader object = new Fxmlloader();
         Pane view = object.getPage("Wecker.fxml");
 
-        //Buttons und Textfelder hier erstellt, weil die Wecker.fxml (Zeile 36) nicht richtig aufgerufen wird
-        JFrame f = new JFrame("Wecker");
-        final JTextField tf = new JTextField();
-        final JTextField tfout = new JTextField();
-        tf.setBounds(50, 50, 150, 20);
-        tfout.setBounds(50, 250, 150, 20);
-        JButton b = new JButton("Set Wecker");
-        b.setBounds(50, 100, 150, 20);
-        b.addActionListener(new ActionListener() {
-
-            String stime;
-
-            /**
-             * Wird ausgefuehrt, wenn der "Set Wecker" - Button geklickt wird
-             * @param e
-             */
-            public void actionPerformed(ActionEvent e) {
-                //  tf.setText("Welcome to Javatpoint.");
-                stime = tf.getText();
+        String stime;
 
 
-                //Die Weckzeit wird in die Datei WeckerTime gespeichert
-                wecker = new File("WeckerTime");
-                FileWriter fwWecker = null;
-                try {
-                    fwWecker = new FileWriter(wecker);
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
+        stime = weckTime.getText();
 
-                try {
-                    fwWecker.write(String.valueOf(stime));
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
+        System.out.println("eeee " +stime);
+        //Die Weckzeit wird in die Datei WeckerTime gespeichert
+        wecker = new File("WeckerTime");
+        FileWriter fwWecker = null;
+        try {
+            fwWecker = new FileWriter(wecker);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
 
-                try {
-                    fwWecker.close();
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
+        try {
+            fwWecker.write(String.valueOf(stime));
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
 
-                // Wecker laeutet ausgabe
-                boolean rv = false;
+        try {
+            fwWecker.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
 
-                //Thread
-                try {
-                    rv = iscurrentWecker();
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-                if (rv) {
-                    tfout.setText("Wecker laeutet");
-                } else {
-                    tfout.setText("Wecker laeutet nicht");
-                }
-            }
-        });
+        // Wecker laeutet ausgabe
+        boolean rv = false;
 
-        f.add(b);
-        f.add(tf);
-        f.add(tfout);
-        f.setSize(400, 400);
-        f.setLayout(null);
-        f.setVisible(true);
+        //Thread
+        try {
+            rv = iscurrentWecker();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        if (rv) {
+            weckTimeshow.setText("Wecker laeutet");
+        } else {
+            weckTimeshow.setText("Wecker laeutet nicht");
+        }
+
     }
+
+
 
     /**
      * Die Weckzeit wird aus der Textdatei ausgelesen und mit der aktuellen Uhrzeit verglichen
@@ -146,6 +128,7 @@ public class WeckerViewGUI {
         }
         return rv;
     }
-}
 
+
+}
 

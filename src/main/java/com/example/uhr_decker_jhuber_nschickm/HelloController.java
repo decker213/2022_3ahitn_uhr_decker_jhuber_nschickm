@@ -77,38 +77,12 @@ public class HelloController {
 
     @FXML
     void showBinaryUhr(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("BinaryClock.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage secondaryStage = new Stage();
+        secondaryStage.setScene(scene);
+        secondaryStage.show();
 
-        Thread thread = new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                Runnable updater = new Runnable() {
-
-                    @Override
-                    public void run() {
-                        try {
-                            bc.binaryViewGUI.display(new Time(System.currentTimeMillis()));
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                };
-
-                while (true) {
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException ex) {
-                    }
-
-                    // UI update is run on the Application thread
-                    Platform.runLater(updater);
-                }
-            }
-
-        });
-        // don't let thread prevent JVM shutdown
-        thread.setDaemon(true);
-        thread.start();
     }
 
     public void showDigitaluhr(ActionEvent actionEvent) throws IOException {
@@ -131,19 +105,23 @@ public class HelloController {
     }
 
     public void wecker(ActionEvent event) throws IOException {
-        //wevg.display();
-        wc.weckerViewGUI.display();
-        wc.weckerViewGUI.iscurrentWecker();
-        System.out.println(wc.weckerViewGUI.iscurrentWecker());
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Wecker.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage secondaryStage = new Stage();
+        secondaryStage.setScene(scene);
+        secondaryStage.show();
     }
 
     public void initialize() {
-        bc = new BinaryController(mainpane);
-        bvg = new BinaryViewGUI(mainpane);
         wvg = new WeatherViewGUI(mainpane, wetter, temperatur, stadt, date);
-        wevg = new WeckerViewGUI(mainpane);
-        wc = new WeckerController(mainpane);
     }
 
+    public void showTimer(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Timer.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage secondaryStage = new Stage();
+        secondaryStage.setScene(scene);
+        secondaryStage.show();
+    }
 }
 
