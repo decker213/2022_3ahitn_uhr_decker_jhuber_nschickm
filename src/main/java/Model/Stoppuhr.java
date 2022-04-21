@@ -33,10 +33,5 @@ public class Stoppuhr {
     public Time getStart() {
         return start;
     }
-
-    public boolean getEnd() {
-        return end;
-    }
-
 }
 
