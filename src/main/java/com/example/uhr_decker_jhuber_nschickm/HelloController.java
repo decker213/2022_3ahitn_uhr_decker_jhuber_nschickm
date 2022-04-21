@@ -140,14 +140,16 @@ public class HelloController {
 
     public void initialize() {
         bvg = new BinaryViewGUI(mainpane);
-        wvg = new WeatherViewGUI(mainpane, wetter, temperatur, stadt, date);
-        tivg = new TimerViewGUI(mainpane);
-        tc = new TimerController(mainpane);
+        wvg = new WeatherViewGUI(mainpane, wetter, temperatur, stadt, date);;
     }
 
 
     public void timer(ActionEvent event) throws IOException {
-        tc.timerViewGUI.display();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Timer.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage secondaryStage = new Stage();
+        secondaryStage.setScene(scene);
+        secondaryStage.show();
     }
 }
 

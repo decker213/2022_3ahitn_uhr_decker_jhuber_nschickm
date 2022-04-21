@@ -1,6 +1,7 @@
 package View;
 
 import com.example.uhr_decker_jhuber_nschickm.Fxmlloader;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
@@ -17,10 +18,10 @@ import java.io.IOException;
  */
 public class TimerViewGUI {
 
-    private BorderPane mainpane;
+    private AnchorPane anchorPane;
 
-    public TimerViewGUI(BorderPane borderPane) {
-        mainpane = borderPane;
+    public TimerViewGUI(AnchorPane anchorPane) {
+        this.anchorPane = anchorPane;
 
     }
 
@@ -49,6 +50,5 @@ public class TimerViewGUI {
         f.setSize(400, 400);
         f.setLayout(null);
         f.setVisible(true);
-        mainpane.setCenter(view);
 }
 }
