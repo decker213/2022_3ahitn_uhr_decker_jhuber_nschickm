@@ -23,12 +23,21 @@ public class AnalogViewGUI {
     private AnchorPane min;
     private AnchorPane sec;
 
+    /**
+     * @param h Anchorpane in der der Stunden Zeiger rotiert wird
+     * @param min Anchorpane in der der Minuten Zeiger rotiert wird
+     * @param sec Anchorpane in der der Sekunden Zeiger rotiert wird
+     */
     public AnalogViewGUI(AnchorPane h, AnchorPane min, AnchorPane sec) {
         this.h = h;
         this.min = min;
         this.sec = sec;
     }
 
+    /**
+     * Zeigt die Zeit im analogen Format an
+     * @param time Zeit, welche angezeigt wird
+     */
     public void display(Time time) {
         double alphah;
         double alphamin;
