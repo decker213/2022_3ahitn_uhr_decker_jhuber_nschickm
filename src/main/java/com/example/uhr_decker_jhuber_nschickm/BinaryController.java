@@ -16,7 +16,7 @@ public class BinaryController {
     public BorderPane borderpane;
     protected BinaryViewGUI binaryViewGUI;
 
-    public void initialize(){
+    public void initialize() throws InterruptedException {
         binaryViewGUI = new BinaryViewGUI(borderpane);
 
         Thread thread = new Thread(new Runnable() {
