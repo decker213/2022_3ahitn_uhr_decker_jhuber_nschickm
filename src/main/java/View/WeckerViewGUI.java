@@ -22,17 +22,17 @@ public class WeckerViewGUI {
 
     protected Label weckTimeshow;
     protected TextField weckTime;
-   protected AnchorPane anchorPane;
+    protected AnchorPane anchorPane;
 
     File wecker;
 
     /**
      * Konstruktor
      *
-     * @param
+     * @param anchorPane
      */
     public WeckerViewGUI(AnchorPane anchorPane) {
-     this.anchorPane=anchorPane;
+        this.anchorPane = anchorPane;
 
     }
 
