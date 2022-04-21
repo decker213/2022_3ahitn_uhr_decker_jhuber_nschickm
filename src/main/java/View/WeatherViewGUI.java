@@ -41,9 +41,13 @@ public class WeatherViewGUI {
         this.stadt = stadt;
         this.date = date;
 
-        wetter.setVisible(false);
-        temperatur.setVisible(false);
-        date.setVisible(false);
+
+        if(wetter != null && temperatur != null && date != null){
+            wetter.setVisible(false);
+            temperatur.setVisible(false);
+            date.setVisible(false);
+        }
+
     }
 
 

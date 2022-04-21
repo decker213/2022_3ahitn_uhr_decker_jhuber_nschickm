@@ -131,16 +131,16 @@ public class HelloController {
      * @throws IOException
      */
     public void wecker(ActionEvent event) throws IOException {
-        //wevg.display();
-        wc.weckerViewGUI.display();
-        wc.weckerViewGUI.iscurrentWecker();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Wecker.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage secondaryStage = new Stage();
+        secondaryStage.setScene(scene);
+        secondaryStage.show();
     }
 
     public void initialize() {
         bvg = new BinaryViewGUI(mainpane);
         wvg = new WeatherViewGUI(mainpane, wetter, temperatur, stadt, date);
-        wevg = new WeckerViewGUI(mainpane);
-        wc = new WeckerController(mainpane);
         tivg = new TimerViewGUI(mainpane);
         tc = new TimerController(mainpane);
     }
