@@ -17,10 +17,19 @@ import java.sql.Time;
 public class BinaryViewGUI {
     private BorderPane borderPane;
 
+    /**
+     * Konsttruktor
+     * @param borderPane
+     */
     public BinaryViewGUI(BorderPane borderPane) {
         this.borderPane = borderPane;
     }
 
+    /**
+     *  Aendert die Binaryuhr
+     * @param time
+     * @throws IOException
+     */
     public void display(Time time) throws IOException {
 
 

@@ -25,11 +25,21 @@ public class WeckerViewGUI {
 
     File wecker;
 
+    /**
+     * Konstruktor
+     *
+     * @param borderPane
+     */
     public WeckerViewGUI(BorderPane borderPane) {
         mainpane = borderPane;
 
     }
 
+    /**
+     * Wird ausgegeben
+     *
+     * @throws IOException
+     */
     public void display() throws IOException {
 
         Fxmlloader object = new Fxmlloader();

@@ -14,6 +14,9 @@ import javafx.scene.transform.Rotate;
 import java.io.IOException;
 import java.sql.Time;
 
+/**
+ * @author decker
+ */
 public class AnalogViewGUI {
 
     private AnchorPane h;
