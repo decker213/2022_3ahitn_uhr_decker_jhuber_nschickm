@@ -1,6 +1,7 @@
 package View;
 
 import com.example.uhr_decker_jhuber_nschickm.Fxmlloader;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
@@ -21,12 +22,12 @@ public class WeckerViewGUI {
 
     protected Label weckTimeshow;
     protected TextField weckTime;
-    private BorderPane mainpane;
+   protected AnchorPane anchorPane;
 
     File wecker;
 
-    public WeckerViewGUI(BorderPane borderPane) {
-        mainpane = borderPane;
+    public WeckerViewGUI(AnchorPane anchorPane) {
+     this.anchorPane=anchorPane;
 
     }
 
@@ -100,7 +101,6 @@ public class WeckerViewGUI {
         f.setSize(400, 400);
         f.setLayout(null);
         f.setVisible(true);
-        mainpane.setCenter(view);
     }
 
     /**
