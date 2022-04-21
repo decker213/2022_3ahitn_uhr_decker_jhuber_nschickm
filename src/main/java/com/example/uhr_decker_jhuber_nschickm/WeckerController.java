@@ -2,14 +2,14 @@ package com.example.uhr_decker_jhuber_nschickm;
 
 import View.BinaryViewGUI;
 import View.WeckerViewGUI;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
 public class WeckerController {
-    protected BorderPane mainpane;
+    public AnchorPane anchorpane;
     protected WeckerViewGUI weckerViewGUI;
 
-    WeckerController(BorderPane mainpane){
-        this.mainpane = mainpane;
-        weckerViewGUI = new WeckerViewGUI(mainpane);
+    public void initialize(){
+        weckerViewGUI = new WeckerViewGUI(anchorpane);
     }
 }

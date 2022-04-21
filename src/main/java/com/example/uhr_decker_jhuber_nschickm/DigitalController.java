@@ -7,6 +7,9 @@ import javafx.scene.control.Label;
 
 import java.sql.Time;
 
+/**
+ * Mittels eines Threads wird Digitaluhr aktualisiert
+ */
 public class DigitalController {
 
     @FXML

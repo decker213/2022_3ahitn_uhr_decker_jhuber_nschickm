@@ -15,16 +15,23 @@ import java.sql.Time;
  * @author nschickm
  */
 public class BinaryViewGUI {
-    private BorderPane mainpane;
+    private BorderPane borderPane;
 
+    /**
+     * Konsttruktor
+     * @param borderPane
+     */
     public BinaryViewGUI(BorderPane borderPane) {
-        mainpane = borderPane;
+        this.borderPane = borderPane;
     }
 
+    /**
+     *  Aendert die Binaryuhr
+     * @param time
+     * @throws IOException
+     */
     public void display(Time time) throws IOException {
 
-        Fxmlloader object = new Fxmlloader();
-        Pane view = object.getPage("BinaryClock.fxml");
 
         // Kreise für Stunden zeichnen
         int counthour = 0;
@@ -196,10 +203,9 @@ public class BinaryViewGUI {
             }
         }
 
-        mainpane.getChildren().addAll(circArrayHour);
-        mainpane.getChildren().addAll(circArrayMin);
-        mainpane.getChildren().addAll(circArraySec);
-        mainpane.setCenter(view);
+        borderPane.getChildren().addAll(circArrayHour);
+        borderPane.getChildren().addAll(circArrayMin);
+        borderPane.getChildren().addAll(circArraySec);
     }
 }
 

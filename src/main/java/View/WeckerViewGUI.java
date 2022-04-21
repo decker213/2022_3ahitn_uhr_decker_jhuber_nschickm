@@ -1,6 +1,7 @@
 package View;
 
 import com.example.uhr_decker_jhuber_nschickm.Fxmlloader;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
@@ -21,15 +22,25 @@ public class WeckerViewGUI {
 
     protected Label weckTimeshow;
     protected TextField weckTime;
-    private BorderPane mainpane;
+    protected AnchorPane anchorPane;
 
     File wecker;
 
-    public WeckerViewGUI(BorderPane borderPane) {
-        mainpane = borderPane;
+    /**
+     * Konstruktor
+     *
+     * @param anchorPane
+     */
+    public WeckerViewGUI(AnchorPane anchorPane) {
+        this.anchorPane = anchorPane;
 
     }
 
+    /**
+     * Wird ausgegeben
+     *
+     * @throws IOException
+     */
     public void display() throws IOException {
 
         Fxmlloader object = new Fxmlloader();
@@ -100,11 +111,10 @@ public class WeckerViewGUI {
         f.setSize(400, 400);
         f.setLayout(null);
         f.setVisible(true);
-        mainpane.setCenter(view);
     }
 
     /**
-     * Die Weckzeit wird aus der Textdatei ausgelesen und mit der aktuellen Uhrzeit vergliechen
+     * Die Weckzeit wird aus der Textdatei ausgelesen und mit der aktuellen Uhrzeit verglichen
      *
      * @return true wenn die Weckzeit und aktuelle Uhrzeit gleich sind
      * false wenn die Weckzeit und aktuelle Uhrzeit nicht sind

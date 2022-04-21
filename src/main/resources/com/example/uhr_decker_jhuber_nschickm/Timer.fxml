@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchorpane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uhr_decker_jhuber_nschickm.TimerController">
+    <children>
+        <TextField fx:id="hours" layoutX="23.0" layoutY="80.0" />
+        <Label layoutX="23.0" layoutY="56.0" text="Stunden" />
+      <TextField fx:id="minutes" layoutX="200.0" layoutY="79.0" />
+      <Label layoutX="200.0" layoutY="55.0" text="Minuten" />
+      <TextField fx:id="seconds" layoutX="371.0" layoutY="79.0" />
+      <Label layoutX="371.0" layoutY="55.0" text="Sekunden" />
+      <Button layoutX="20.0" layoutY="131.0" mnemonicParsing="false" onAction="#startTimer" text="Start" />
+      <Button layoutX="82.0" layoutY="131.0" mnemonicParsing="false" onAction="#stopTimer" text="Stopp" />
+    </children>
+</AnchorPane>
