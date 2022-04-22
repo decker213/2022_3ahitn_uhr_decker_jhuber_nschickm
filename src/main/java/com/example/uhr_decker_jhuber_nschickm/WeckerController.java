@@ -15,6 +15,10 @@ import java.awt.*;
 import java.io.*;
 import java.sql.Time;
 
+/**
+ * WeckerController der die Elemente des Weckers steuert
+ * @author nschikm
+ */
 public class WeckerController {
     public AnchorPane anchorpane;
 

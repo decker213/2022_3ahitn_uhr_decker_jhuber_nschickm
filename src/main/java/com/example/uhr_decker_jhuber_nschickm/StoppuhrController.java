@@ -14,6 +14,10 @@ import javafx.scene.control.Label;
 
 import java.sql.Time;
 
+/**
+ * @author decker
+ * StoppuhrController Klasse, die den Thread und den Button für die Stoppuhr steuert
+ */
 public class StoppuhrController {
     @FXML
     private Label DigitalTimeLabel;
