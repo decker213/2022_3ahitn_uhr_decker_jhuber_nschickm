@@ -2,4 +2,4 @@
 |-----|------------|---------|-------------------------------|--------------------------------------------|--------------|--------|
 | 1   | 17.03.2022 | 1.0     | alle                          | Klassendiagramm                            | Huber Julian | fg     |
 | 2   | 25.03.2022 | 1.0     | Digital, Date, Weather-ViewGUI| Methoden gschrieben und dokumentiert       | Huber Julian | fg     |
-| 2   | 25.03.2022 | 1.0     | Digital, Date, Weather-ViewGUI| Methoden gschrieben und dokumentiert       | Huber Julian | fg     |
+| 3   | 20.04.2022 | 1.0     | Alles fertiggestellt (Threads+Controller) | Methoden gschrieben            | Huber Julian | fg     |
