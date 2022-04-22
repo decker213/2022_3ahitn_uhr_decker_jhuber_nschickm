@@ -34,6 +34,7 @@ public class WeckerController {
 
     public void initialize(){
         weckerViewGUI = new WeckerViewGUI(anchorpane, weckTime);
+        weckTimeshow.setVisible(false);
     }
 
     public void wecker(ActionEvent event) throws IOException, LineUnavailableException, UnsupportedAudioFileException, InterruptedException {
@@ -75,6 +76,7 @@ public class WeckerController {
             ex.printStackTrace();
         }
         if (rv) {
+            weckTimeshow.setVisible(true);
             weckTimeshow.setText("Wecker laeutet");
             for (int i = 0; i < 5; i++) {
                 SoundUtils.tone(1000,100);
